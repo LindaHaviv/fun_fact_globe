@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <script src="http://www.webglearth.com/v2/api.js"></script>
+    <script>
+    function initialize() {
+        var options = {
+            sky: true,
+            atmosphere: true,
+            dragging: true,
+            tilting: true,
+            center: [46.8011, 8.2266],
+            zoom: 2
+
+        };
+        earth = new WE.map('earth_div', options);
+        var natural = WE.tileLayer('http://data.webglearth.com/natural-earth-color/{z}/{x}/{y}.jpg', {
+            tileSize: 256,
+            tms: true
+        });
+        natural.addTo(earth);
+
+        var toner = WE.tileLayer('http://tile.stamen.com/toner/{z}/{x}/{y}.png', {
+            attribution: 'Map tiles by Stamen Design, under CC BY 3.0. Data by OpenStreetMap, under CC BY SA.',
+            opacity: 0.6
+        });
+        toner.addTo(earth);
+
+        var marker = WE.marker([38.9047, 77.0164]).addTo(earth);
+        marker.bindPopup("<b>Washington, DC </b> <br /> Washington, DC, the U.S. capital, is a compact city on the Potomac River, bordering the states of Maryland and Virginia.<br><br /><span style='font-size:10px;color:#999'></span>", {
+            maxWidth: 150,
+            closeButton: true
+        }).openPopup();
+    }
+    </script>
+</head>
+
+<body onload="initialize()">
+    <div id="earth_div"></div>
+</body>
+
+</html>
