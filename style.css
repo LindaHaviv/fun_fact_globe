@@ -2,16 +2,27 @@ html,
 body {
     padding: 0;
     margin: 0;
-    background-color: black;
     
 }
 
-#earth_div {
 
+.quiz_div{
+  top: 0;
+  right: 80%;
+  bottom: 0;
+  left: 0;
+  position: absolute !important;
+}
+
+#earth_div {
     top: 0;
     right: 0;
     bottom: 0;
-    left: 0;
+    left: 20%;
     position: absolute !important;
+}
+
+.hidden{
+  display: none;
 }
 
