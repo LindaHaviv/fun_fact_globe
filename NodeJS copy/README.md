@@ -1,2 +1,0 @@
-# PropertyChains
-NodeJS Server example 
