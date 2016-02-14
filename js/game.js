@@ -6,20 +6,25 @@
 
 var currentCapitalIndex;
 var shuffledCapitals;
+var correct_number;
+var incorrect_number;
 
 function askForCapital(){
   $(".state").text(shuffledCapitals[currentCapitalIndex].state);
   $(".correct").hide();
   $(".incorrect").hide();
   $(".next_question").hide();
+  $(".scoreboard").show();
 }
 
 function correctAnswer(){
-
+  correct_number++;
+  $(".correctNum").text(correct_number)
 }
 
 function incorrectAnswer(){
-  
+   incorrect_number++;
+  $(".incorrectNum").text(incorrect_number);
 }
 
 function checkCapital(capital){
@@ -27,6 +32,7 @@ function checkCapital(capital){
   if (currentCapital === capital){
     $(".correct").show();
     $(".incorrect").hide();
+    correctAnswer();
       if (currentCapitalIndex < capitals.length){
         $(".next_question").show();
       } else {
@@ -36,6 +42,7 @@ function checkCapital(capital){
     $(".correct").hide();
     $(".incorrect").show();
     $(".next_question").hide();
+    incorrectAnswer();
   }
 }
 
@@ -48,6 +55,7 @@ function startGame(){
   currentCapitalIndex = 0;
   shuffledCapitals = _.shuffle(capitals);
   askForCapital();
-
+  correct_number = 0;
+  incorrect_number = 0;
 }
 
