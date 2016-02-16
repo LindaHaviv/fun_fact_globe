@@ -31,3 +31,12 @@ body {
   display: none;
 }
 
+.question_font {
+  font-size: 25px;
+}
+
+.scoreboard_style {
+  border-color: #fff; 
+  font-style: 20px;
+}
+
