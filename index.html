@@ -3,12 +3,14 @@
 
 <head>
     <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.3.0/lodash.min.js"></script>
     <script src="http://www.webglearth.com/v2/api.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
-    <script src= "js/capitals.js"></script>
-    <script src= "js/game.js"></script>
-    <script src= "js/main.js"></script>
+    <script src="js/capitals.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/main.js"></script>
 </head>
 
 <body onload="initialize()">
@@ -21,22 +23,33 @@
                 <h1>Geo Quiz</h1>
                 <p>What is the capital of <span class="state"></span> ?</p>
                 <p class="correct hidden">You are Correct!</p>
-               <!--  include the capital of .. is.. -->
+                <!--  include the capital of .. is.. -->
                 <p class="incorrect hidden">Sorry, try again!</p>
                 <table class="scoreboard">
-                  <tr>
-                    <th>Scoreboard</th>
-                  </tr>
-                  <tr>
-                    <td>Correct</td>
-                    <td class="correctNum">0</td>
-                  </tr>
-                  <tr>
-                    <td>Incorrect</td>
-                    <td class="incorrectNum">0</td>
-                  </tr>
+                    <tr>
+                        <th>Scoreboard</th>
+                    </tr>
+                    <tr>
+                        <td>Correct</td>
+                        <td class="correctNum">0</td>
+                    </tr>
+                    <tr>
+                        <td>Incorrect</td>
+                        <td class="incorrectNum">0</td>
+                    </tr>
                 </table>
                 <button class="next_question hidden">Next Question</button>
+            </div>
+            <div class="start_game hidden">
+                <h3 class="score_text">Game Over.</h3>
+                 <h4 class="score_text">Here is the summary:</h4>
+                 <h5> Correct Guesses</h5>
+                 <h2 class="correct_score_count"></h2>
+                 <h5>Incorrect Guesses</h5>
+                <h2 class="incorrect_score_count"></h2>
+</br>
+    
+                <button id="new_game"> New Game</button>
             </div>
         </div>
         <div id="earth_div"></div>
